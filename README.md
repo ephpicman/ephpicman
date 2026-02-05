@@ -1,6 +1,7 @@
 # 👋 Hi, I'm Sina Kuhestani (aka EphpicMan)
 
 [![Hire Me](https://img.shields.io/badge/Hire%20Me-Open%20to%20Work-2ea44f?style=for-the-badge)](https://linkedin.com/in/ephpicman)
+[![Contact](https://img.shields.io/badge/Contact-Telegram-229ED9?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ephpicman)
 
 Senior PHP developer, framework architect, and open-source builder.  
 I design **clean, performant, and expressive systems**—mostly around PHP, Laravel, WordPress internals, and mathematical libraries.
