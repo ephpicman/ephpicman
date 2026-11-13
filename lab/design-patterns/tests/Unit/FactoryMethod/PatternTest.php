@@ -11,6 +11,6 @@ final class PatternTest extends TestCase
 {
     public function testCreatorUsesItsConcreteProduct(): void
     {
-        self::assertSame('Email: hello', new EmailNotificationCreator()->notify('hello'));
+        self::assertSame('Email: hello', (new EmailNotificationCreator())->notify('hello'));
     }
 }

@@ -15,6 +15,7 @@ final class AscendingSort implements SortStrategy
     public function sort(array $values): array
     {
         sort($values);
+
         return $values;
     }
 }

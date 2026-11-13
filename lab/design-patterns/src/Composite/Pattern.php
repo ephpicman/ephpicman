@@ -29,6 +29,7 @@ final class Box implements Component
     public function add(Component $component): self
     {
         $this->children[] = $component;
+
         return $this;
     }
 

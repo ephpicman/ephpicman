@@ -19,6 +19,7 @@ final class StyleFactory
     public function style(string $font, int $size): CharacterStyle
     {
         $key = $font . ':' . $size;
+
         return $this->styles[$key] ??= new CharacterStyle($font, $size);
     }
 }

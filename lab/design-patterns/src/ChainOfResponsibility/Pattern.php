@@ -11,6 +11,7 @@ abstract class Handler
     public function setNext(self $handler): self
     {
         $this->next = $handler;
+
         return $handler;
     }
 

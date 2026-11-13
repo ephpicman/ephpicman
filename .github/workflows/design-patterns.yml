@@ -38,8 +38,6 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: none
           tools: composer:v2
-      - name: Refresh Composer lock metadata
-        run: composer update --lock --no-interaction
       - name: Validate Composer configuration
         run: composer validate --strict
       - name: Install dependencies
@@ -56,11 +54,9 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.2'
           coverage: none
           tools: composer:v2
-      - name: Refresh Composer lock metadata
-        run: composer update --lock --no-interaction
       - name: Validate Composer configuration
         run: composer validate --strict
       - name: Install dependencies

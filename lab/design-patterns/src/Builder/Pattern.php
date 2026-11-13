@@ -23,18 +23,21 @@ final class HouseBuilder
     public function rooms(int $rooms): self
     {
         $this->rooms = $rooms;
+
         return $this;
     }
 
     public function withGarage(): self
     {
         $this->garage = true;
+
         return $this;
     }
 
     public function withGarden(): self
     {
         $this->garden = true;
+
         return $this;
     }
 

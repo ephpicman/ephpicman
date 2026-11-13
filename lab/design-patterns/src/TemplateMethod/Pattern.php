@@ -9,6 +9,7 @@ abstract class DataImporter
     final public function import(string $source): string
     {
         $data = $this->read($source);
+
         return $this->transform($data);
     }
 

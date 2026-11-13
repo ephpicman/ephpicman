@@ -11,7 +11,7 @@ final class PatternTest extends TestCase
 {
     public function testBuildsAnObjectStepByStep(): void
     {
-        $house = new HouseBuilder()->rooms(3)->withGarage()->withGarden()->build();
+        $house = (new HouseBuilder())->rooms(3)->withGarage()->withGarden()->build();
 
         self::assertSame(3, $house->rooms);
         self::assertTrue($house->garage);

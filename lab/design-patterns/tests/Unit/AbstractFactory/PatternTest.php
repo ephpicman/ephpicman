@@ -12,6 +12,6 @@ final class PatternTest extends TestCase
 {
     public function testCreatesACompatibleFamily(): void
     {
-        self::assertSame('Windows button + Windows checkbox', new Application(new WindowsFactory())->render());
+        self::assertSame('Windows button + Windows checkbox', (new Application(new WindowsFactory()))->render());
     }
 }

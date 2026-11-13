@@ -40,6 +40,7 @@ final class Post
         if ($this->state instanceof DraftState) {
             $this->state = new PublishedState();
         }
+
         return $result;
     }
 }
