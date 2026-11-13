@@ -1,0 +1,67 @@
+{
+    "name": "ephpicman/design-patterns",
+    "description": "A practical PHP implementation of the Gang of Four design patterns with PHPUnit tests.",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "design-patterns",
+        "gang-of-four",
+        "gof",
+        "phpunit",
+        "phpstan",
+        "psalm",
+        "php-cs-fixer"
+    ],
+    "homepage": "https://github.com/ephpicman/ephpicman/tree/main/lab/design-patterns",
+    "support": {
+        "issues": "https://github.com/ephpicman/ephpicman/issues",
+        "source": "https://github.com/ephpicman/ephpicman/tree/main/lab/design-patterns"
+    },
+    "authors": [
+        {
+            "name": "Sina Kuhestani",
+            "email": "sinakuhestani@gmail.com",
+            "homepage": "https://github.com/EphpicMan",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^11.5",
+        "vimeo/psalm": "^6.16"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html build/coverage",
+        "analyze:phpstan": "phpstan analyze",
+        "analyze:psalm": "psalm",
+        "format": "php-cs-fixer fix",
+        "format:check": "php-cs-fixer fix --dry-run --diff --verbose",
+        "check-all": [
+            "@format:check",
+            "@analyze:phpstan",
+            "@analyze:psalm",
+            "@test"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
