@@ -40,6 +40,8 @@ jobs:
           tools: composer:v2
       - name: Refresh Composer lock metadata
         run: composer update --lock --no-interaction
+      - name: Refresh Composer lock metadata
+        run: composer update --lock --no-interaction
       - name: Validate Composer configuration
         run: composer validate --strict
       - name: Install dependencies
@@ -59,6 +61,8 @@ jobs:
           php-version: '8.5'
           coverage: none
           tools: composer:v2
+      - name: Refresh Composer lock metadata
+        run: composer update --lock --no-interaction
       - name: Validate Composer configuration
         run: composer validate --strict
       - name: Install dependencies
