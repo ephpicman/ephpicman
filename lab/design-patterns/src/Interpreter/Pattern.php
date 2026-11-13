@@ -6,6 +6,7 @@ namespace App\Interpreter;
 
 interface Expression
 {
+    /** @param array<string, bool> $context */
     public function interpret(array $context): bool;
 }
 
@@ -15,6 +16,7 @@ final class Variable implements Expression
     {
     }
 
+    /** @param array<string, bool> $context */
     public function interpret(array $context): bool
     {
         return (bool) ($context[$this->name] ?? false);
@@ -29,6 +31,7 @@ final class AndExpression implements Expression
     ) {
     }
 
+    /** @param array<string, bool> $context */
     public function interpret(array $context): bool
     {
         return $this->left->interpret($context) && $this->right->interpret($context);

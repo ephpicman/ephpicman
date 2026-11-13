@@ -8,6 +8,7 @@ final class Configuration
 {
     private static ?self $instance = null;
 
+    /** @param array<string, mixed> $values */
     private function __construct(private array $values = [])
     {
     }

@@ -6,6 +6,7 @@ namespace App\Prototype;
 
 final class Document
 {
+    /** @param array<string, mixed> $metadata */
     public function __construct(
         public string $title,
         public array $metadata = [],

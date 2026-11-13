@@ -6,12 +6,19 @@ namespace App\Strategy;
 
 interface SortStrategy
 {
-    /** @param list<int> $values */
+    /**
+     * @param list<int> $values
+     * @return list<int>
+     */
     public function sort(array $values): array;
 }
 
 final class AscendingSort implements SortStrategy
 {
+    /**
+     * @param list<int> $values
+     * @return list<int>
+     */
     public function sort(array $values): array
     {
         sort($values);
@@ -26,7 +33,10 @@ final class Sorter
     {
     }
 
-    /** @param list<int> $values */
+    /**
+     * @param list<int> $values
+     * @return list<int>
+     */
     public function sort(array $values): array
     {
         return $this->strategy->sort($values);

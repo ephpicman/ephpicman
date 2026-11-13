@@ -7,6 +7,7 @@ namespace App\Iterator;
 use IteratorAggregate;
 use Traversable;
 
+/** @implements IteratorAggregate<int, string> */
 final class BookCollection implements IteratorAggregate
 {
     /** @var list<string> */
