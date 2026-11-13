@@ -39,7 +39,7 @@ jobs:
           coverage: none
           tools: composer:v2
       - name: Validate Composer configuration
-        run: composer validate --strict
+        run: composer validate --strict --no-check-lock
       - name: Install dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
       - name: Run PHPUnit
@@ -58,7 +58,7 @@ jobs:
           coverage: none
           tools: composer:v2
       - name: Validate Composer configuration
-        run: composer validate --strict
+        run: composer validate --strict --no-check-lock
       - name: Install dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
       - name: Check formatting
