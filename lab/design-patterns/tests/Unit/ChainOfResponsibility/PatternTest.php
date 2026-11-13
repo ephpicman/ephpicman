@@ -13,7 +13,9 @@ final class PatternTest extends TestCase
     public function testPassesRequestsThroughTheChain(): void
     {
         $manager = new Manager();
-        $manager->setNext(new Director());
+        $director = $manager->setNext(new Director());
+
+        self::assertInstanceOf(Director::class, $director);
 
         self::assertSame('manager', $manager->handle(500));
         self::assertSame('director', $manager->handle(2000));

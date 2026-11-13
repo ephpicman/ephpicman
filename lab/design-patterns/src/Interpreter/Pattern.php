@@ -19,7 +19,7 @@ final class Variable implements Expression
     /** @param array<string, bool> $context */
     public function interpret(array $context): bool
     {
-        return (bool) ($context[$this->name] ?? false);
+        return $context[$this->name] ?? false;
     }
 }
 

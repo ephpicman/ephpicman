@@ -13,4 +13,12 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <MissingOverrideAttribute errorLevel="suppress">
+            <directory name="src" />
+        </MissingOverrideAttribute>
+        <UnusedClass errorLevel="suppress">
+            <directory name="tests" />
+        </UnusedClass>
+    </issueHandlers>
 </psalm>
