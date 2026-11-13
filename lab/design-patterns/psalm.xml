@@ -14,11 +14,15 @@
         </ignoreFiles>
     </projectFiles>
     <issueHandlers>
-        <MissingOverrideAttribute errorLevel="suppress">
-            <directory name="src" />
+        <MissingOverrideAttribute>
+            <errorLevel type="suppress">
+                <directory name="src" />
+            </errorLevel>
         </MissingOverrideAttribute>
-        <UnusedClass errorLevel="suppress">
-            <directory name="tests" />
+        <UnusedClass>
+            <errorLevel type="suppress">
+                <directory name="tests" />
+            </errorLevel>
         </UnusedClass>
     </issueHandlers>
 </psalm>
