@@ -13,10 +13,10 @@
         "psalm",
         "php-cs-fixer"
     ],
-    "homepage": "https://github.com/ephpicman/ephpicman/tree/main/lab/design-patterns",
+    "homepage": "https://github.com/ephpicman/DesignPatterns",
     "support": {
-        "issues": "https://github.com/ephpicman/ephpicman/issues",
-        "source": "https://github.com/ephpicman/ephpicman/tree/main/lab/design-patterns"
+        "issues": "https://github.com/ephpicman/DesignPatterns/issues",
+        "source": "https://github.com/ephpicman/DesignPatterns"
     },
     "authors": [
         {
