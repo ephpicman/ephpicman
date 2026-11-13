@@ -1,0 +1,73 @@
+name: Design Patterns
+
+on:
+  push:
+    paths:
+      - 'lab/design-patterns/**'
+      - '.github/workflows/design-patterns.yml'
+  pull_request:
+    paths:
+      - 'lab/design-patterns/**'
+      - '.github/workflows/design-patterns.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: design-patterns-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: lab/design-patterns
+
+jobs:
+  tests:
+    name: PHPUnit (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3', '8.4', '8.5']
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer:v2
+      - name: Refresh Composer lock metadata
+        run: composer update --lock --no-interaction
+      - name: Validate Composer configuration
+        run: composer validate --strict
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Run PHPUnit
+        run: composer test
+
+  quality:
+    name: Static analysis and formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          coverage: none
+          tools: composer:v2
+      - name: Refresh Composer lock metadata
+        run: composer update --lock --no-interaction
+      - name: Validate Composer configuration
+        run: composer validate --strict
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Check formatting
+        run: composer format:check
+      - name: Run PHPStan
+        run: composer analyze:phpstan
+      - name: Run Psalm
+        run: composer analyze:psalm
